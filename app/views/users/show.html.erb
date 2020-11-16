@@ -1,4 +1,10 @@
-<h1>User info</h1>
-<p>投稿ユーザー画像：</p>
-<p>name：<%= @user.name %></p>
-<p>introduction：<%= @user.introduction %></p>
+<%= render 'users/user_info', user: @user %>
+
+<% @books.each do |book| %>
+<div>
+  <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+  <p><%= link_to book.title, book_path(book.id) %></p>
+  <p>Opinion：<%= book.body %></p>
+  <p>ユーザーネーム：<%= book.user.name %></p>
+</div>
+<% end %>
