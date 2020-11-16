@@ -4,14 +4,15 @@
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.15.1/css/all.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!--<script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous"></script>-->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <header>
       <% if user_signed_in? %>
+        <i class="fab fa-facebook-square"></i>
         <li>
           <%= link_to "Home", user_path(current_user.id) %>
         </li>
@@ -28,6 +29,7 @@
           <%= link_to "logout", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
+      <i class="fab fa-facebook-square"></i>
         <li>
           <%= link_to "Home", root_path %>
         </li>

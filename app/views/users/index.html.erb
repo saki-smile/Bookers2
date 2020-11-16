@@ -1,4 +1,5 @@
-
+<%= render 'users/user_info', user: current_user %>
+<%= render 'books/new_book', book: @book %>
 
 <h1>Users</h1>
 <% @users.each do |user| %>
